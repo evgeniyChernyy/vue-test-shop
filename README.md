@@ -1,4 +1,4 @@
-# untitled
+# Vue-test-shop
 
 ## Project setup
 ```

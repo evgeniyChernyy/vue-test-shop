@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@600&display=swap')
+
+// common style
+*
+  font-family: "Montserrat",sans-serif
+  font-weight: 400
+  font-size: 1rem
+html
+  font-size: calc(11px + (16 - 11) * ((100vw - 1025px) / (1920 - 1025)))
+#app
+  padding-top: 2rem
+.container
+  padding: 0 20px
+  margin: 0 auto
+  max-width: 1370px
+.theme-btn-transp
+  display: inline-block
+  border: 1px solid #040404
+  width: 18rem
+  padding: .6rem 0
+  text-align: center
+  cursor: pointer
+  border-radius:1.25rem
+  &.md-btn
+    width: 12.5rem
+  &.black-btn
+    color: white
+    background-color: #040404
+
+// homepage
+.hp__nav-breadcrumbs-link
+  display: inline-block
+  position: relative
+  margin-right: 1.625rem
+  line-height: 2rem
+.hp__nav-breadcrumbs-link:not(:last-child):after
+  content: "/"
+  position: absolute
+  right: -1rem
+.hp__nav-cont
+  display: flex
+  justify-content: space-between
+  align-items: center
+.hp__nav-select-btn
+  margin-left: 2rem
+  cursor: pointer
+.products
+  margin-top: 2.15rem
+  display: grid
+  grid-template-rows: auto auto
+  grid-template-columns: 31% 31% 31%
+  justify-content: space-between
+.product-item
+  position: relative
+  margin-bottom: 3rem
+.product-item__thumb
+  margin-bottom: .7rem
+  width: 100%
+  object-fit: cover
+.product-item__header
+  font-weight: 500
+  font-size: 1.5rem
+  line-height: 1.85rem
+  margin-bottom: .5rem
+.product-item__descr
+  font-size: 14px
+  line-height: 1.1rem
+  margin-bottom: .6rem
+  color:#888888
+.product-item__price
+  font-weight: 500
+  font-size: 1.5rem
+  line-height: 1.85rem
+.product-item__add-to-cart-btn,
+.product-item__like-btn
+  position: absolute
+  right: .8rem
+  top: .8rem
+  cursor: pointer
+  opacity: 0
+  transition: transform .3s, opacity .3s
+  &:hover
+    transform: scale(1.1)
+.product-item:hover .product-item__add-to-cart-btn,
+.product-item:hover .product-item__like-btn
+  opacity: 1
+.product-item__add-to-cart-btn
+  right: 3.2em
+//  cart page
+.cart
+  display: flex
+  justify-content: space-between
+.cart-items-cont
+  flex-basis: 72%
+.cart-total-cont
+  flex-basis: 26%
+.cart-items-cont__titles-cont
+  display: flex
+  justify-content: space-between
+  padding-bottom: .875rem
+  padding-right: 1.5rem
+  border-bottom: 1px solid #CACDD8
+.cart-items-cont__title-item
+  line-height: 1.25rem
+.cart-item
+  display: flex
+  padding: 1.5rem 0
+  position: relative
+  border-bottom: 1px solid #CACDD8
+.cart-item:last-child
+  border-bottom: none
+.cart-item__thumb-cont
+  flex-basis: 27%
+  padding-right: 1.5rem
+.cart-item__info-cont
+  flex-basis: 73%
+  padding-right: 18.75rem
+.cart-item__header
+  font-size: 1.5rem
+  font-weight: 500
+  line-height: 1.875rem
+  margin-bottom: .875rem
+.cart-item__descr
+  font-size: 14px
+  line-height: 17px
+  color: #888888
+  margin-bottom: 1rem
+.cart-item__price
+  font-weight: 500
+  line-height: 1.25rem
+  color: #050505
+  margin-bottom: 1rem
+.cart-item__action-item
+  display: inline-block
+  margin-right: 1.875rem
+  text-decoration: underline
+  cursor: pointer
+.cart-actions-cont
+  margin-top: 1.5rem
+.clear_cart_btn
+  margin-right: 8px
+.cart-item__prod-quantity-cont
+  position: absolute
+  background-color: #F7F6F6
+  border-radius: 6px
+  right: 0
+  width: 4.43rem
+  height: 3.15rem
+  padding-top: 0.45rem
+.cart-item__prod-quantity-input
+  background-color: transparent
+  border: none
+  font-weight: 600
+  font-size: 14px
+  line-height: 2rem
+  text-align: center
+  width: 70%
+.cart-item__prod-quantity-btn
+  position: absolute
+  top: .5rem
+  right: .5rem
+  cursor: pointer
+  &.btn_down
+    top: 1.5rem
+    transform: rotate(180deg)
+.cart-total-cont
+  background-color: #F7F6F6
+  border-radius: 1.25rem
+  padding: 2.625rem 2.75rem 4rem 1.68rem
+  text-align: center
+.cart-total__header
+  font-weight: 600
+  font-size: 1.5rem
+  line-height: 2.25rem
+  margin-bottom: 2rem
+  font-family: 'Poppins', sans-serif
+.cart-total__input-line
+  padding-right: 2rem
+  margin-bottom: 2.25rem
+.cart-total__input
+  width: 100%
+  font-size: 14px
+  line-height: 17px
+  background-color: transparent
+  border: none
+  border-bottom: 1px solid #CACDD8
+.cart-total__subtotal
+  margin-top: 4rem
+  font-size: 1.5rem
+  line-height: 1.875rem
+  margin-bottom: 1.125rem
+.cart-total__subtotal-price
+  font-weight: 500
+.cart-total__submit-btn
+  width: 100%
+.cart-items-msg
+  margin-top: 1rem
