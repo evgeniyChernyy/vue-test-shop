@@ -1,28 +1,47 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import {EVENT_BUS} from "./main"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+
+  },
+  data(){
+    return {
+      products: null,
+      cart:[]
+    }
+  },
+  methods:{
+    addToCart(id){
+        let product = null;
+        for(let item of this.products){
+          if(item.id === id)
+            product = Object.assign({},item)
+        }
+        if(!product) return;
+        for(let item of this.cart){
+          if (item.id === id) return;
+        }
+        product["quantity"] = 1;
+        this.cart.push(product);
+    }
+  },
+  beforeMount() {
+    fetch("products.json")
+      .then((response)=>{
+        return response.json()
+      })
+      .then((data)=> this.products = data)
+  },
+  mounted(){
+    EVENT_BUS.$on("addToCart",this.addToCart)
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
